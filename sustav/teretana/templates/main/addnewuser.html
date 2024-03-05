@@ -1,0 +1,60 @@
+{% extends "adminbase.html" %}
+ 
+{% block title %}Add New User Records{% endblock title %}
+ 
+{% block head %}
+{% block content %}
+<div class="col-md-12">
+         
+ <form method="POST" class="post-form" action="/addnewuser">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h2>Enter Details</h2>  
+  </div>  
+   </div>  
+
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">User Number/Username:</label>  
+  <div class="col-sm-4">  
+    {{ form.username }}  
+  </div>  
+   </div>  
+
+
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">User Name:</label>  
+  <div class="col-sm-4">  
+    {{ form.first_name }}  
+  </div>  
+   </div>  
+
+
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">User Last Name:</label>  
+  <div class="col-sm-4">  
+    {{ form.last_name.label_tag }}  
+  </div>  
+   </div>  
+
+
+   <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">User Email:</label>  
+    <div class="col-sm-4">  
+      {{ form.email }}  
+    </div>  
+        
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-primary">Submit</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+</div> 
+{% endblock content %} 
+{% endblock head %}

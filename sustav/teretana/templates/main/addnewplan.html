@@ -1,0 +1,52 @@
+{% extends "adminbase.html" %}
+ 
+{% block title %}Add New Plan Records{% endblock title %}
+ 
+{% block head %}
+{% block content %}
+<div class="col-md-12">
+         
+ <form method="POST" class="post-form" action="/addnewplan">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h2>Enter Details</h2>  
+  </div>  
+   </div>  
+
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Plan Name:</label>  
+  <div class="col-sm-4">  
+    {{ form.naziv }}  
+  </div>  
+   </div>  
+
+
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Plan Price:</label>  
+  <div class="col-sm-4">  
+    {{ form.cijena }}  
+  </div>  
+   </div>  
+
+
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Plan Tags:</label>  
+  <div class="col-sm-4">  
+    {{ form.oznake }}  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-primary">Submit</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+</div> 
+{% endblock content %} 
+{% endblock head %}

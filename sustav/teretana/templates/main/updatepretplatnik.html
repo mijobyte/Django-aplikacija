@@ -1,0 +1,76 @@
+{% extends "adminbase.html" %}
+ 
+{% block title %}Add New Subscriber Records{% endblock title %}
+ 
+{% block head %}
+{% block content %}
+<div class="col-md-12">
+
+ <form method="POST" class="post-form" action="/updatetrener/{{trener.id}}" enctype="multipart/form-data">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h2>Update Details</h2>  
+  </div>  
+  </div>
+
+
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Subscriber Name:</label>  
+  <div class="col-sm-4">  
+    {{ form.korisnik }}  
+  </div>  
+   </div>  
+
+
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Subscriber Trainer:</label>  
+  <div class="col-sm-4">  
+    {{ form.trener }}  
+  </div>  
+   </div>  
+
+   <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Subscriber Plan:</label>  
+    <div class="col-sm-4">  
+      {{ form.plan }}  
+    </div>  
+     </div>  
+
+     <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Subscriber Date of Birth:</label>  
+        <div class="col-sm-4">  
+          {{ form.datum_r }}  
+        </div>  
+         </div>  
+
+         <div class="form-group row">  
+            <label class="col-sm-2 col-form-label">Subscriber Gender:</label>  
+            <div class="col-sm-4">  
+              {{ form.spol }}  
+            </div>  
+             </div> 
+
+             <div class="form-group row">  
+                <label class="col-sm-2 col-form-label">Subscriber Address:</label>  
+                <div class="col-sm-4">  
+                  {{ form.adresa }}  
+                </div>  
+                 </div>  
+
+
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-success btn-lg">Update</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form> 
+
+
+{% endblock content %}
+{% endblock head %}
